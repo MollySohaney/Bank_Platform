@@ -7,7 +7,7 @@
 
 ## Database
 
-* Name In MySQL - cs4370_final_project
+* Name In MySQL - bank_platform_db
 
 * Username - root
 

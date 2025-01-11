@@ -1,8 +1,8 @@
 -- Create the database.
-create database if not exists cs4370_final_project;
+create database if not exists bank_platform_db;
 
 -- Use the created database.
-use cs4370_final_project;
+use bank_platform_db;
 
 create table if not exists User (
     user_id int auto_increment, 
