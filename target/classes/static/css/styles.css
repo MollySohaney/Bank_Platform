@@ -1,0 +1,397 @@
+* {
+    --color-1: #dad7cd;
+    --color-2: #a3b18a;
+    --color-3: #588157;
+    --color-4: #3a5a40;
+    --color-5: #344e41;
+    --color-6: #e6e6fa;
+    --color-7: powderblue;
+    --color-8: rosybrown;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--color-1);
+}
+
+header {
+    background-color: var(--color-3);
+    color: var(--color-1);
+    padding: 2vmin;
+    display: flex;
+    align-items: center;
+    padding: 2vh 20vw;
+}
+
+header * {
+    text-align: center;
+    margin: auto;
+}
+
+.svg-icon {
+    width: 10vmin;
+    height: 10vmin;
+    margin: 0 2vw;
+    fill: var(--color-1);
+    border: 1px solid var(--color-1);
+    border-radius: 25%;
+}
+
+header h3 {
+    margin: 0 2vw;
+}
+
+nav ul {
+    padding: 0 8vmin;
+    height: 100%;
+}
+
+nav ul li {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 1vmin;
+    height: 100%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-1);
+}
+
+.nav-link:hover {
+    color: var(--color-6);
+}
+
+.content {
+    width: 60vw;
+    margin: 1vh auto;
+    border-radius: 5pt;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    padding: 1vmin;
+    padding-bottom: 10vh;
+}
+
+.content h3 {
+    text-align: center;
+    color: var(--color-4);
+}
+
+footer {
+    color: var(--color-8);
+    display: flex;
+    align-items: center;
+    padding: 2vh 0;
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    background-color: var(--color-1);
+    font-size: 12pt;
+}
+
+footer * {
+    text-align: center;
+    margin: auto;
+}
+
+footer ul li {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 1vmin;
+    height: 100%;
+}
+
+footer ul li:first-child {
+    font-weight: bold;
+    color: var(--color-3);
+}
+
+.login-form {
+    margin: 0 5vmin;
+    text-align: center;
+    padding: 8pt;
+}
+
+.login-form .text-input {
+    display: block;
+    margin: 5pt auto;
+    padding: 6pt;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    color: var(--color-4);
+}
+
+.number-input {
+    display: block;
+    margin: 5pt auto;
+    padding: 0 6pt;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-form button {
+    display: block;
+    margin: 2vh auto;
+    background-color: var(--color-8);
+    color: var(--color-6);
+    border: none;
+    padding: 4pt 10pt;
+    border-radius: 5px;
+}
+
+.login-form button:hover {
+    background-color: var(--color-1);
+    color: var(--color-4);
+    cursor: pointer;
+}
+
+.register-form {
+    margin: 0 5vmin;
+    text-align: center;
+    padding: 8pt;
+}
+
+.register-form .text-input {
+    display: block;
+    margin: 5pt auto;
+    padding: 6pt;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    color: var(--color-4);
+}
+
+.register-form button {
+    background-color: var(--color-8);
+    color: var(--color-6);
+    border: none;
+    padding: 4pt 10pt;
+    border-radius: 5px;
+    margin: 2vh auto;
+}
+
+.register-form button:hover {
+    background-color: var(--color-1);
+    color: var(--color-4);
+    cursor: pointer;
+}
+
+.account-summary {
+    margin: 2vh 8vw;
+    background-color: var(--color-6);
+    padding: 0.5vh 1vw;
+    display: flex;
+    text-decoration: none;
+    color: var(--color-4);
+}
+
+.account-summary .account-name {
+    width: 50%;
+    text-align: left;
+}
+
+.account-summary .account-balance {
+    width: 50%;
+    text-align: right;
+}
+
+.account-summary .account-link {
+    position: absolute;
+}
+
+.account-transaction {
+    text-align: center;
+    display: block;
+    width: 50%;
+    text-decoration: none;
+    background-color: var(--color-8);
+    color: var(--color-6);
+    border: none;
+    padding: 4pt 10pt;
+    border-radius: 5px;
+    margin: 2vh auto;
+}
+
+.last-month-change {
+    margin: 0 10vw;
+    color: var(--color-6);
+    text-align: right;
+}
+
+.transactions {
+    margin: 2vh 8vw;
+    padding: 0.5vh 1vw;
+}
+
+.single-transaction {
+    margin: 0 auto;
+    font-size: 10pt;
+}
+
+.single-transaction p {
+    display: inline-block;
+    padding: 0 0.25vw;
+}
+
+.single-transaction .transaction-datetime {
+    width: calc(50% - 1vw);
+    text-align: left;
+}
+
+.single-transaction .transaction-amount {
+    width: calc(50% - 1vw);
+    text-align: right;
+}
+
+.transactions .single-transaction:nth-child(odd) {
+    background-color: var(--color-1);
+}
+
+.transactions .single-transaction:nth-child(even) {
+    background-color: var(--color-6);
+}
+
+.statements {
+    margin: 2vh 8vw;
+    padding: 0.5vh 1vw;
+}
+
+.bank-statement {
+    margin: 0 auto;
+    font-size: 10pt;
+    display: block;
+    text-decoration: none;
+}
+
+.bank-statement p {
+    display: inline-block;
+    padding: 0 0.25vw;
+    color: var(--color-4);
+}
+
+.bank-statement .statement-acc {
+    width: calc(50% - 1vw);
+    text-align: left;
+}
+
+.bank-statement .statement-amount {
+    width: calc(50% - 1vw);
+    text-align: right;
+}
+
+.statements .bank-statement:nth-child(odd) {
+    background-color: var(--color-1);
+}
+
+.statements .bank-statement:nth-child(even) {
+    background-color: var(--color-6);
+}
+
+.login-form .input-row {
+    display: flex;
+    margin: 1vmin;
+}
+
+.login-form .input-row input {
+    width: 40%;
+}
+
+.login-form .input-row .number-input input {
+    width: 80%;
+}
+
+.login-form .input-row .number-input input[type="number"] {
+    margin-left: 0px;
+    margin-right: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #e6e6fa;
+    color: #3a5a40;
+    height: 32pt;
+    padding: 6pt;
+}
+
+.login-form .input-row select {
+    display: block;
+    padding: 6pt;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    color: var(--color-4);
+    margin-left: 2vw;
+}
+
+.login-form .input-row input[type="date"] {
+    display: block;
+    padding: 6pt;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    color: var(--color-4);
+    margin-left: 1vw;
+}
+
+.transfer-form {
+    display: block;
+    margin: 1vh 5vw;
+    text-align: center;
+    padding: 1vh 4vw;
+}
+
+.transfer-form .input-row {
+    margin: 2vh auto;
+}
+
+.transfer-form .input-row select {
+    display: inline;
+    padding: 6pt;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    color: var(--color-4);
+    margin: 0 auto;
+}
+
+.transfer-form .text-input {
+    display: block;
+    margin: 5pt auto;
+    padding: 6pt;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    color: var(--color-4);
+}
+
+.transfer-form .dollar-input input {
+    display: block;
+    margin: 5pt auto;
+    padding: 6pt;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-6);
+    color: var(--color-4);
+}
+
+.transfer-form button {
+    background-color: var(--color-8);
+    color: var(--color-6);
+    border: none;
+    padding: 4pt 10pt;
+    border-radius: 5px;
+}
+
+.transfer-form button:hover {
+    background-color: var(--color-1);
+    color: var(--color-4);
+    cursor: pointer;
+}
+
+.transfer-form #other_account_row[visible="false"] {
+    display: none;
+}
+
+.transfer-form #other_account_row[visible="true"] {
+    display: block;
+}

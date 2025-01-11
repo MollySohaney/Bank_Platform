@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+{{> fragments/html_header}}
+<body>
+    {{> fragments/top_bar logged out}}
+    <div class="content">
+        <h3>Register</h3>
+        <div class="register-form">
+            <form method="post" action="/register">
+                <input type="text" name="first-name" class="text-input" placeholder="First Name"/>
+                <input type="text" name="last-name" class="text-input" placeholder="Last Name"/>
+                <input type="text" name="username" class="text-input" placeholder="Username"/>
+                <input type="password" name="password" class="text-input" placeholder="Password"/>
+                <input type="password" name="repeat-password" class="text-input" placeholder="Repeat Password"/>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    {{> fragments/footer}}
+</body>
+</html>

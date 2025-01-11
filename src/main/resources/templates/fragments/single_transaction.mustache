@@ -1,0 +1,17 @@
+<div class="single-transaction">
+    <p class="transaction-datetime">{{date}} {{time}}</p>
+    <p class="transaction-amount" id="tr-amount-{{tr_id}}">$ {{amount}}</p>
+    <p class="transaction-type">{{type}}</p>
+	<script>
+		amount = document.getElementById("tr-amount-{{tr_id}}");
+		if ({{amount}}<0) {
+			oldAmount = {{amount}}
+			newAmount = 0-oldAmount;
+			amount.style.color="red";
+		} else {
+			newAmount = {{amount}}
+		}
+		formattedAmount = newAmount.toFixed(2);
+		amount.innerHTML = "$ " + formattedAmount;
+	</script>
+</div>

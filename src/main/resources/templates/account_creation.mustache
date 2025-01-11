@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{{> fragments/html_header}}
+<body>
+	{{> fragments/top_bar}}
+    <div class="content">
+        <h3>Create Bank Account</h3>
+        <div class="login-form">
+            <form method="post" action="/account/create">
+                <div class="input-row">
+                    <input type="text" name="name" class="text-input" placeholder="Account Name"/>
+                    <div class="number-input">
+                        <label for="dollar-input" style="margin-right: 0; margin-left: auto;">$</label>
+                        <input id="dollar-input" type="number" step="0.01" min="0" name="balance" placeholder="Initial Balance" />
+                    </div>
+                </div>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+    {{> fragments/footer}}
+</body>
+</html>

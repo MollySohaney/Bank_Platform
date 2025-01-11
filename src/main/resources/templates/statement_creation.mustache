@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+{{> fragments/html_header}}
+<body>
+    {{> fragments/top_bar}}
+    <div class="content">
+        <h3>Create Bank Statement</h3>
+        <div class="login-form">
+            <form method="post" name="create_statement" action="/statements/create">
+                <div class="input-row">
+                    <label for="my_account">Choose the account:</label>
+                    <select id="my_account" name="my_account">
+                        {{#accounts}}
+                            {{> fragments/option_account}}
+                        {{/accounts}}
+                    </select>
+                </div>
+                <div class="input-row">
+                    <label for="from_date">From:</label>
+                    <input type="date" name="from_date" id="from_date"/>
+                </div>
+                <div class="input-row">
+                    <label for="to_date">To:</label>
+                    <input type="date" name="to_date" id="to_date"/>
+                </div>
+                <button type="submit">Create Statement</button>
+            </form>
+        </div>
+    </div>
+    {{> fragments/footer}}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+{{> fragments/html_header}}
+<body>
+    {{> fragments/top_bar}}
+    <div class="content">
+        <h3>Bank Statements for {{user.firstName}} {{user.lastName}}</h3>
+        <div class="statements">
+            {{#statement}}
+                {{> fragments/bank_statement}}
+            {{/statement}}
+        </div>
+    </div>
+    {{> fragments/footer}}
+</body>
+</html>

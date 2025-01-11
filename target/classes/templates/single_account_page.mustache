@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+{{> fragments/html_header}}
+<body>
+    {{> fragments/top_bar}}
+    <div class="content">
+        <h3>Account Details for {{user.firstName}} {{user.lastName}}</h3>
+        {{> fragments/account_summary}}
+        <p class="last-month-change" id="changeSince">Change since {{startOfMonth}}: $ </p>
+        <div class="transactions">
+			<a class="account-transaction" href="/account/{{acc_id}}/transfer">New Transaction</a>
+            {{#transactions}}
+                {{> fragments/single_transaction}}
+            {{/transactions}}
+        </div>
+    </div>
+    {{> fragments/footer}}
+	<script>
+		var change = {{balanceChange}};
+		var formattedChange = change.toFixed(2);
+		document.getElementById("changeSince").innerHTML += formattedChange;
+	</script>
+</body>
+</html>

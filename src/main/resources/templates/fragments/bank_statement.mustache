@@ -1,0 +1,13 @@
+<a class="bank-statement" href="/statements/{{st_id}}">
+    <p class="statement-acc" id="{{acc_id}}-name">{{name}}</p>
+    <p class="statement-amount" id="{{st_id}}-amount">$ {{amount}}
+        <script>
+            amount = document.getElementById("{{st_id}}-amount");
+            if({{amount}} < 0) {
+                amount.style.color="red";
+            }
+            amount.innerHTML = "$ " + Math.abs({{amount}}).toFixed(2);
+        </script>
+    </p>
+    <p class="statement-daterange">from {{start_date}} to {{end_date}}</p>
+</a>

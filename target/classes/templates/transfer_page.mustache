@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+{{> fragments/html_header}}
+<body>
+    {{> fragments/top_bar}}
+    <div class="content">
+        <h3>Transfer Money for {{name}} - <span id="transfer-header-amount"></span></h3>
+        <script>
+            const header = document.getElementById("transfer-header-amount");
+            header.innerText = "$ " + Math.abs({{balance}}).toFixed(2);
+            if({{balance}} < 0) {
+                header.style.color = "red";
+            }
+        </script>
+        <div class="transfer-form">
+            <form method="post" action="withdraw" id="transaction-form">
+                <div class="input-row">
+                    <label for="transfer_type">Choose a transfer type:</label>
+                    <select id="transfer_type" name="transfer_type">
+                        <option value="withdraw">Withdraw</option>
+                        <option value="deposit">Deposit</option>
+                        <option value="transfer">Transfer</option>
+                    </select>
+                </div>
+                <div class="input-row" id="other_account_row" visible="false">
+                    <label for="other_account">Choose target account:</label>
+                    <select id="other_account" name="other_account">
+                        {{#accounts}}
+                            {{> fragments/option_account}}
+                        {{/accounts}}
+                    </select>
+                </div>
+                <div class="dollar-input">
+                    <input id="dollar-input" type="number" step="0.01" min="0" name="transfer_amount" placeholder="Amount"/>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script type="text/javascript">
+            const transferType = document.querySelector("#transfer_type");
+            const otherAccountRow = document.querySelector("#other_account_row");
+			otherAccountRow.style.display='none';
+            transferType.onchange = () => {
+                if(transferType.value === "transfer") {
+					document.getElementById("transaction-form").action = "transfer";
+                    otherAccountRow.style.display='block';
+                } else {
+					if (transferType.value === "deposit") {
+						document.getElementById("transaction-form").action = "deposit";
+					} else {
+						document.getElementById("transaction-form").action = "withdraw";
+					}
+					otherAccountRow.style.display='none';
+                }
+            };
+        </script>
+    </div>
+    {{> fragments/footer}}
+</body>
+</html>

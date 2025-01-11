@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+{{> fragments/html_header}}
+<body>
+    {{> fragments/top_bar}}
+    <div class="content">
+        <h3>Accounts for {{user.firstName}} {{user.lastName}}</h3>
+        {{#accounts}}
+            {{> fragments/account_summary}}
+        {{/accounts}}
+    </div>
+    {{> fragments/footer}}
+</body>
+</html>
